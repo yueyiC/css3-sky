@@ -5,4 +5,4 @@ css3-星空效果
 
 - 利用ajax获取实时天气,群山可随着鼠标偏移
 
-[查看demo](https://github.com/yueyiC/css3-sky)
+[查看demo](http://1.lazy.applinzi.com/works/sky/)
