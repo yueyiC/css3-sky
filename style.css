@@ -1,0 +1,259 @@
+* {
+	box-sizing: border-box;
+}
+html,
+body,
+ul,
+li,
+h3,
+h2,
+p {
+	margin: 0;
+	padding: 0;
+}
+html,
+body {
+	height: 100%;
+	font-size: 14px;
+	min-width: 1300px;
+	font-family: serif,Arial,"Microsoft YaHei",sans-serif;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+h2,
+h3 {
+	font-weight: lighter;
+}
+h3 {
+	font-size: 32px;
+	color: inherit;
+}
+hr {
+	margin: 20px 0;
+}
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+	display: none;
+}
+.hide {
+	display: none;
+}
+
+.layout {
+	width: 90%;
+	margin: 0 auto;
+}
+/*清除浮动*/
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.header {
+	position: relative;
+	background: radial-gradient(rgb(97, 97, 123), rgb(47, 47, 82) 80%);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*漫天星辰*/             
+/*z-index: 0 */
+.header .shadow {
+	/*position: absolute;*/
+}
+.header .shadow>div {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 560px;
+	background: url('./images/shadow.png') no-repeat;
+}
+.header .shadow1 {
+	left: 0;
+	animation:sd1 400s linear infinite;
+}
+.header .shadow2 {
+	left: 100%;
+	transform: rotateY(180deg);
+	animation:sd2 400s linear infinite;
+}
+@keyframes sd1{
+  0%,100%{
+    transform:translate(0);
+  }
+  50%{
+    transform:translate(-100%);
+  }
+  50.01%{
+    transform:translate(100%);
+  }
+}
+@keyframes sd2{
+  0%,100%{
+    transform:translate(0);
+  }
+  99.9%{
+    transform:translate(-200%);
+  }
+}
+
+.header .meteors>div {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: url('./images/meteor.png') center center no-repeat;
+	background-size: contain;
+	z-index: 5;
+}
+.meteors .meteor1 {
+	top: -60px;
+	left: 600px;
+	animation: me1 10s 0s linear  infinite;
+}
+.meteors .meteor2 {
+	top: 0;
+	right: -60px;
+	animation: me2 10s 2s linear  infinite;
+}
+@keyframes me1{
+  0%,{
+    transform:translate(0,0);
+    opacity: 1;
+  }
+  50%{
+    transform:translate(-1000px,1000px);
+    opacity: 1;
+  }
+  51%,100%{
+  	opacity: 0;
+  }
+}
+@keyframes me2{
+  0%,{
+    transform:translate(0,0);
+    opacity: 1;
+  }
+  50%{
+    transform:translate(-1000px,1000px);
+    opacity: 1;
+  }
+  51%,100%{
+  	opacity: 0;
+  }
+}
+
+/*群山*/
+/*mountain1 z-index  5 */
+/*mountain2 z-index  4 */
+/*mountain3 z-index  3 */
+.header .mountains>div {
+	position: absolute;
+	width: 100%;
+	height: 524px;
+	left: 0;
+	bottom: -10px;
+	background-size: 100% 55%;
+}
+.mountains .mountain1 {
+	background: url('./images/mountain1.png') center bottom no-repeat;
+	z-index: 5;
+	/*transform: translate(0,0);*/
+}
+.mountains .mountain2 {
+	background: url('./images/mountain2.png') center bottom no-repeat;
+	z-index: 4;
+}
+.mountains .mountain3 {
+	background: url('./images/mountain3.png') center bottom no-repeat;
+	z-index: 3;
+}
+/*星星*/
+/*z-index*/
+.stars div {
+	position: absolute;
+	background: url('./images/star.png') no-repeat;
+	background-size: 100%;
+	animation: blink 2s infinite;
+	z-index: 5;
+}
+.stars .star1,
+.stars .star2 {
+	width: 21px;
+	height: 21px;
+	animation: blink 2s 0s infinite;
+}
+.stars .star1 {
+	left: 130px;
+	top: 380px;
+}
+.stars .star2 {
+	right: 100px;
+	bottom: 200px;
+}
+.stars .star3,
+.stars .star4 {
+	width: 15px;
+	height: 15px;
+	animation: blink 2s 1s infinite;
+}
+.stars .star3 {
+	left: 565px;
+	top: 290px;
+}
+.stars .star4 {
+	right: 650px;
+	top: 230px;
+}
+.stars .star5 {
+	width: 10px;
+	height: 10px;
+	right: 200px;
+	top: 270px;
+	animation: blink 2s 1s infinite;
+}
+@keyframes blink
+{
+	0% {transform: scale(1,1);}
+	50% {transform: scale(0.3,0.3);}
+	100% {transform: scale(1,1);}
+}
+/*天气*/
+/*z-index*/
+.weather {
+	position: absolute;
+	top: 130px;
+	right: -200px;
+	width: 200px;
+	text-align: center;
+	animation: wt 40s 3s linear infinite;
+	z-index: 5;
+}
+.weather:hover {
+	animation-play-state: paused;
+}
+@keyframes wt
+{
+	0% {
+		transform: translate(0,0);
+	}
+	100%,60% {
+		transform: translate(-1600px,0);
+	}
+}
+.weather-detail {
+	display: block;
+	width: 200px;
+	border: 2px solid #8A8A9E;
+	padding: 5px;
+	border-radius: 5px;
+	color: #eee;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
